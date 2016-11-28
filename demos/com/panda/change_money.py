@@ -13,4 +13,4 @@ if __name__ == "__main__" :
     source_acctid = sys.argv[1]
     target_accid = sys.argv[2]
     money = sys.argv[3]
-	print source_acctid , target_accid , money
+    print source_acctid , target_accid , money
