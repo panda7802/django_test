@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//blog/base/base_pages.py=utf-8
 encoding//blog/db/ctrl_db.py=utf-8
+encoding//blog/migrations/0003_person.py=utf-8
 encoding//blog/views.py=utf-8
 encoding//ptools/p_tools.py=utf-8
 encoding/<project>=UTF-8
