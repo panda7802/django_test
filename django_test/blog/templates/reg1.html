@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>注册</title>
+</head>
+<body class="body">
+	<form method="post" enctype="multipart/form-data">{% csrf_token %}
+		<label for="id_name">姓名</label><input type="text" name="name"><br/>
+		<label for="id_age">年龄</label><input type="text" name="age"><br/>
+		<label for="id_img">年龄</label><input type="file" name="img"><br/>
+		<input type="submit" value="OK"/>
+	</form>
+</body>
+</html>
