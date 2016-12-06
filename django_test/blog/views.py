@@ -5,6 +5,8 @@ from django.template.base import Template
 from django.template.context import Context
 from django.http.response import HttpResponse
 import traceback
+from blog.reg import upload_test, reg_test
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(req, id):
@@ -40,3 +42,78 @@ def db_ctrl(req, type):
         traceback.print_exc() 
         
     return res
+
+
+@csrf_exempt
+def upload(req,type):
+    sType = type + ''
+    try :
+        if 0 == cmp(sType, '0') :
+            res = upload_test.upfile(req)
+        elif 0 == cmp(sType, '1') :
+            res = upload_test.upfile1(req)
+        else :
+            res = HttpResponse('<h1>Input Error</h1>')
+    except :
+        res = HttpResponse('<h1>Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
+
+def login_test(req,type):
+    sType = type + ''
+    try :
+        if 0 == cmp(sType, '0') :
+            res = HttpResponse('<h1>Login</h1>')
+        elif 0 == cmp(sType, '1') :
+            res = HttpResponse('<h1>Login</h1>')
+        else :
+            res = HttpResponse('<h1>Login Error</h1>')
+    except :
+        res = HttpResponse('<h1>Login Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
+
+def logout_test(req,type):
+    sType = type + ''
+    try :
+        if 0 == cmp(sType, '0') :
+            res = HttpResponse('<h1>Logout</h1>')
+        elif 0 == cmp(sType, '1') :
+            res = HttpResponse('<h1>Logout</h1>')
+        else :
+            res = HttpResponse('<h1>Logout Error</h1>')
+    except :
+        res = HttpResponse('<h1>Logout Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
+
+
+def reg():
+    sType = type + ''
+    try :
+        if 0 == cmp(sType, '1') :
+            res = reg_test.reg(req)
+        else :
+            res = HttpResponse('<h1>Input Error</h1>')
+    except :
+        res = HttpResponse('<h1>Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
+
+
+def login():
+    pass
+
+
+def showUser():
+    pass
+
+
+def logout():
+    pass
+
+

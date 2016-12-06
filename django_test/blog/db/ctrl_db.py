@@ -15,7 +15,7 @@ from django.shortcuts import render_to_response
 def db_ins():
     p = Person()
     p.addr = '跑马巷'
-    p.age = 18
+    p.age = 28
     p.name = 'panda'
     p.save()
      
