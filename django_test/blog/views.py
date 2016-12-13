@@ -60,60 +60,44 @@ def upload(req,type):
         
     return res
 
-def login_test(req,type):
-    sType = type + ''
+@csrf_exempt
+def reg(req):
     try :
-        if 0 == cmp(sType, '0') :
-            res = HttpResponse('<h1>Login</h1>')
-        elif 0 == cmp(sType, '1') :
-            res = HttpResponse('<h1>Login</h1>')
-        else :
-            res = HttpResponse('<h1>Login Error</h1>')
-    except :
-        res = HttpResponse('<h1>Login Data Error</h1>')
-        traceback.print_exc() 
-        
-    return res
-
-def logout_test(req,type):
-    sType = type + ''
-    try :
-        if 0 == cmp(sType, '0') :
-            res = HttpResponse('<h1>Logout</h1>')
-        elif 0 == cmp(sType, '1') :
-            res = HttpResponse('<h1>Logout</h1>')
-        else :
-            res = HttpResponse('<h1>Logout Error</h1>')
-    except :
-        res = HttpResponse('<h1>Logout Data Error</h1>')
-        traceback.print_exc() 
-        
-    return res
-
-
-def reg():
-    sType = type + ''
-    try :
-        if 0 == cmp(sType, '1') :
-            res = reg_test.reg(req)
-        else :
-            res = HttpResponse('<h1>Input Error</h1>')
+        res = reg_test.reg(req)
     except :
         res = HttpResponse('<h1>Data Error</h1>')
         traceback.print_exc() 
         
     return res
 
+@csrf_exempt
+def login(req):
+    try :
+        res = reg_test.login(req)
+    except :
+        res = HttpResponse('<h1>Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
 
-def login():
-    pass
+@csrf_exempt
+def showUser(req):
+    try :
+        res = reg_test.showUser(req)
+    except :
+        res = HttpResponse('<h1>Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
 
-
-def showUser():
-    pass
-
-
-def logout():
-    pass
+@csrf_exempt
+def logout(req):
+    try :
+        res = reg_test.logout(req)
+    except :
+        res = HttpResponse('<h1>Data Error</h1>')
+        traceback.print_exc() 
+        
+    return res
 
 

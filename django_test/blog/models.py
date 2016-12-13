@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 
 from django.db import models
 from random import choice
-from ptools.global_data import PROJECT_PATH
+from ptools.global_data import tGlobalData
 
 sex_choices = (
-    ('f', 'famale'),
-    ('m', 'male'),
+    ('f', '女'),
+    ('m', '男'),
 )
 
 class Entry(models.Model):
@@ -50,7 +50,7 @@ class Book(models.Model):
 class UserForm(models.Model):
     name = models.CharField(max_length=64)
     age = models.IntegerField()
-    img = models.FileField(upload_to=PROJECT_PATH + '/recv/')
+    img = models.FileField(upload_to=tGlobalData.PROJECT_PATH + '/recv/')
 
     def __unicode__(self):
         return self.name + " 上传"

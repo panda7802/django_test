@@ -27,8 +27,8 @@ urlpatterns = [
 #     
     url(r'^upload/(?P<type>\d{1})$', blog.views.upload),
 #     
-    url(r'^reg/(?P<type>\d{1})$', blog.views.reg),
-    url(r'^login/(?P<type>\d{1})$', blog.views.login),
-    url(r'^showUser/(?P<type>\d{1})$', blog.views.showUser),
-    url(r'^logout/(?P<type>\d{1})$', blog.views.logout),
+    url(r'^reg$', blog.views.reg),
+    url(r'^login$', blog.views.login),
+    url(r'^showUser$', blog.views.showUser),
+    url(r'^logout$', blog.views.logout),
 ]

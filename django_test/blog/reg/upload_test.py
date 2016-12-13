@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_exempt
 import os
-from ptools.global_data import PROJECT_PATH
+from ptools.global_data import tGlobalData
 from blog import models
 
 
@@ -27,7 +27,7 @@ def upfile(req):
         if uf.is_valid():
             print uf.cleaned_data , uf.cleaned_data['name']
             print uf.cleaned_data['img'].size
-            sDir = PROJECT_PATH + '/recv/';
+            sDir = tGlobalData.PROJECT_PATH + '/recv/';
             if False == os.path.exists(sDir) :
                 os.mkdir(sDir)
             fp = file(sDir + uf.cleaned_data['img'].name, 'wb')
@@ -41,7 +41,7 @@ def upfile(req):
         return render_to_response('reg.html', {'uf':uf})
     else :
         return HttpResponse('ERR')
-
+    
 #用数据库存表单
 @csrf_exempt
 def upfile1(req):
